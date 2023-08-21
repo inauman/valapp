@@ -1,0 +1,37 @@
+Exlcude dirs from tree COMMAND (use I switch with pipe delimited input)
+tree -L 2 -I "__*|abc.py|.git"
+
+# run from the root
+python -m unittest tests.test_hk_tin_validator
+
+# run from the root folder
+chmod +x create_structure.sh   # This makes the script executable
+./create_structure.sh          # This executes the script
+
+pip install pytest pytest-html
+pytest
+pytest -v
+pytest -v --html=report.html
+
+python -m app.main
+python -m app.file_readers.validation_dict_reader
+python -m app.file_readers.xlsx_reader
+
+# Show hide files
+COMMAND , ==> settings
+"files" ==> exclude
+
+# pytest settings
+pytest as workspace setting.
+"python.testing.pytestPath": "/home/thomas/.virtualenvs/edis/bin/pytest"
+
+
+https://stackoverflow.com/questions/64589254/vscode-does-not-run-pytest-properly-from-virtual-environment
+
+#change the font
+https://stackoverflow.com/questions/71911748/visual-studio-code-how-to-increase-font-size-in-the-explorer-panel-for-some-di
+{
+    "editor.fontSize": 16,
+    "terminal.integrated.fontSize": 14,
+    "window.zoomLevel": 1.4,
+}

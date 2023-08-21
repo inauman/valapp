@@ -1,0 +1,48 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Local development settings
+instance/
+.env
+
+# Logs and databases
+*.log
+*.sqlite
+
+# IDE files
+.vscode/
+*.pydevproject
+*.project
+*.settings/
+*.idea/
+*.iml
+.venv/
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+*.egg
+
+# Compiled Python modules
+*.pyc
+*.pyo
+*.pyd
+*.so
+*.dll
+*.exe
+
+# macOS
+.DS_Store
+
+# temp files
+~$*.xlsx
+~$*.xls
+~$*.csv
+
+# application files
+app/data/forms*
+app/data/scans*
+data/*
