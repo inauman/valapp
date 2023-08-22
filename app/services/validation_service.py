@@ -6,13 +6,14 @@ from app.dao.form5_dao import Form5DAO
 from validators.commons.giin_validator import GIINValidator
 from app.file_readers.xlsx_reader import XLSXReader
 from validators.HK.tin_validator import HKTINValidator
+from app.file_readers.validation_dict_reader import ValidationDictReader
 
 log = get_app_logger(__name__)
 
 class ValidationService:
     def __init__(self):
-        pass
-
+        self.validation_dict_reader = ValidationDictReader()
+        
 
     def validate_all_files(self, directory_path):
         log.debug("Validating all files in directory: " + directory_path)
@@ -32,8 +33,10 @@ class ValidationService:
     def _validate_single_file(self, file_path):
         log.debug("Validating file: " + file_path)
         
+        rules, repetitive_fields = self.validation_dict_reader.fetch_validation_rules()
+
         # Reading the file just once
-        xlsx_reader = XLSXReader()
+        xlsx_reader = XLSXReader(rules=rules, repetitive_fields=repetitive_fields)
         xlsx_data = xlsx_reader.fetch_data_from_xlsx(file_path)
         form5_dao = Form5DAO(xlsx_data)
 
@@ -49,8 +52,14 @@ class ValidationService:
 
         # Validate the TIN
         form4_dao = Form4DAO(xlsx_data)
-        BRID = form4_dao.get_BRID()
-        hk_validator = HKTINValidator()
-        response_hk_validator = hk_validator.validate_business_tin(tin=BRID)
-        log.info(response_hk_validator)
+        brid_list = form4_dao.get_BRID()
+        for BRID in brid_list:
+            log.info(f'BRID: {BRID}')
+            hk_validator = HKTINValidator()
+            response_hk_validator = hk_validator.validate_business_tin(tin=BRID)
+            log.info(response_hk_validator)
+        
+        # hk_validator = HKTINValidator()
+        # response_hk_validator = hk_validator.validate_business_tin(tin=BRID)
+        # log.info(response_hk_validator)
 

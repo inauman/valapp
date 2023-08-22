@@ -7,7 +7,8 @@ log = get_app_logger(__name__)
 class BaseDAO:
     def __init__(self, xlsx_data):
         self.validation_dict_reader = ValidationDictReader()
-        self.validation_rules = self.validation_dict_reader.fetch_validation_rules()
+        #self.validation_rules = self.validation_dict_reader.fetch_validation_rules()
+        self.validation_rules, self.repetitive_fields = self.validation_dict_reader.fetch_validation_rules()
         self.xlsx_data = xlsx_data
 
     def get_available_forms(self):
@@ -37,4 +38,7 @@ class BaseDAO:
         Retrieve specific field data for a given form.
         """
         form_data = self.get_form_data(form_name)
+        #return form_data.get(field_name)
+        if form_name in self.repetitive_fields and field_name in self.repetitive_fields[form_name]:
+            return form_data.get(field_name, [])
         return form_data.get(field_name)

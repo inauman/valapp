@@ -32,7 +32,7 @@ class ValidationDictReader:
         Reads the validation-dict.csv and returns a structured dictionary with rules for each worksheet.
         """
         rules = {}
-
+        repetitive_fields = {}
         with open(self.file_path, "r", encoding="iso-8859-1") as csvfile:
             csvreader = csv.reader(csvfile)
             next(csvreader)  # Skip the header row
@@ -59,10 +59,20 @@ class ValidationDictReader:
                     field_rule["pad_with"] = pad_with
 
                 rules[worksheet_name].append(field_rule)
+                if worksheet_name not in repetitive_fields:
+                    repetitive_fields[worksheet_name] = {}
+                
+                if field_name in repetitive_fields[worksheet_name]:
+                    repetitive_fields[worksheet_name][field_name] += 1
+                else:
+                    repetitive_fields[worksheet_name][field_name] = 1
 
-        log.debug(f"Validation rules extracted from {self.file_path}: {rules}")
-        return rules
+            for worksheet, fields in repetitive_fields.items():
+                repetitive_fields[worksheet] = {k: v for k, v in fields.items() if v > 1}
 
+            log.debug(f"Validation rules extracted from {self.file_path}: {rules}: {repetitive_fields}")
+            return rules, repetitive_fields
+        
 
 if __name__ == "__main__":
     dict_reader = ValidationDictReader()

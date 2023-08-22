@@ -9,4 +9,4 @@ class Form4DAO(BaseDAO):
         super().__init__(xlsx_data=xlsx_data)
 
     def get_BRID(self):
-        return self.get_field_data('Part 3', 'BRID')
+        return self.get_field_data('Part 4', 'BRID')
