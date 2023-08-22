@@ -1,0 +1,86 @@
+Country,ISOCode,IDType,IDSubType,IDBriefDesc,RegEx,RegExDesc
+Australia,AU,TIN,P,Tax File Number (TFN),^\d{3} \d{3} \d{3}$,The TFN format is 'AAA BBB CCC' with all digits.
+Australia,AU,TIN,B,Australian Business Number (ABN),^\d{11}$,The ABN format consists of 11 digits.
+Austria,AT,TIN,P,Personal Identification Number,^\d{10}$,The format consists of 10 digits.
+Austria,AT,TIN,B,Company Register Number,"^\d{1,9}$",The format consists of up to 9 digits.
+Belgium,BE,TIN,P,National Number,^\d{11}$,The format consists of 11 digits.
+Belgium,BE,TIN,B,Enterprise Number,^\d{10}$,The format consists of 10 digits.
+Canada,CA,TIN,P,Social Insurance Number (SIN),^\d{3}-\d{3}-\d{3}$,The SIN format is 'AAA-GGG-SSS' with all digits.
+Canada,CA,TIN,B,Business Number (BN),^\d{9}$,The BN format consists of 9 digits.
+Chile,CL,TIN,P,RUT (Rol Único Tributario),"^\d{7,8}-[0-9Kk]$","The RUT format consists of 7 or 8 digits, a hyphen, and a digit or 'K'."
+Chile,CL,TIN,B,RUT (Rol Único Tributario),"^\d{7,8}-[0-9Kk]$","The RUT format for businesses is the same as for individuals, consisting of 7 or 8 digits, a hyphen, and a digit or 'K'."
+Colombia,CO,TIN,P,Número de Identificación Tributaria (NIT),"^\d{4,10}-\d{1}$","The NIT format consists of 4 to 10 digits, a hyphen, and a verifying digit."
+Colombia,CO,TIN,B,Número de Identificación Tributaria (NIT),"^\d{4,10}-\d{1}$","The NIT format for businesses is the same as for individuals, consisting of 4 to 10 digits, a hyphen, and a verifying digit."
+Costa Rica,CR,TIN,P,Cédula de Identidad,"^\d{9,12}$",The format consists of 9 to 12 digits.
+Costa Rica,CR,TIN,B,Cédula Jurídica,"^\d{9,12}$",The format consists of 9 to 12 digits.
+Czech Republic,CZ,TIN,P,Personal Number,"^\d{6}/\d{3,4}$","The format is 'AADMMY/XXXX'. AA is day, MM is month, YY is year, and XXXX is a sequence number."
+Czech Republic,CZ,TIN,B,Identification Number (IČO),^\d{8}$,The format consists of 8 digits.
+Denmark,DK,TIN,P,CPR (Personal Identification Number),^\d{6}-\d{4}$,"The format is 'DDMMYY-XXXX', where DDMMYY is the birthdate and XXXX is a sequence number."
+Denmark,DK,TIN,B,CVR (Central Business Register Number),^\d{8}$,The format consists of 8 digits.
+Estonia,EE,TIN,P,Personal Identification Code,^\d{11}$,The format consists of 11 digits.
+Estonia,EE,TIN,B,Registry Code,^\d{8}$,The format consists of 8 digits.
+Finland,FI,TIN,P,Personal Identity Code,^\d{6}[+-A]\d{3}[0-9A-FHJ-NPR-Y]$,"The format is 'DDMMYY symbol XXXC', where DDMMYY is the birthdate, symbol is +, -, or A, XXX is a sequence number, and C is a checksum."
+Finland,FI,TIN,B,Business Identity Code,^\d{7}-\d$,"The format is 'XXXXXXX-Y', where XXXXXXX is the business number and Y is a control character."
+France,FR,TIN,P,INSEE Code,^\d{15}$,The format consists of 15 digits.
+France,FR,TIN,B,SIREN Number,^\d{9}$,The SIREN format consists of 9 digits.
+Germany,DE,TIN,P,Steueridentifikationsnummer,^\d{11}$,The format consists of 11 digits.
+Germany,DE,TIN,B,Steuernummer,^\d{3}/\d{4}/\d{5}$,"The format is 'FFF/BBBB/SSSSS', where FFF is the tax office number, BBBB is the district number, and SSSSS is a sequence number."
+Greece,GR,TIN,P,Αριθμός Φορολογικού Μητρώου (AFM),^\d{9}$,The AFM format consists of 9 digits.
+Greece,GR,TIN,B,Αριθμός Φορολογικού Μητρώου (AFM),^\d{9}$,"The AFM format for businesses is the same as for individuals, consisting of 9 digits."
+Hong Kong,HK,TIN,P,Hong Kong Identity Card (HKID),"^[A-Z]{1,2}\d{6}(\([0-9A]\))?$","The format is 'LDDDDDD(D)', where L is 1 or 2 letters and D is a digit. The last digit in parentheses is the check digit."
+Hong Kong,HK,TIN,B,Business Registration Number (BRN),^\d{8}$,The format consists of 8 digits.
+Hungary,HU,TIN,P,Adóazonosító jel,^\d{10}$,The format consists of 10 digits.
+Hungary,HU,TIN,B,Adószám,^\d{8}-\d-\d{2}$,"The format is 'XXXXXXXX-Y-ZZ', where XXXXXXXX is the taxpayer's number, Y is a check digit, and ZZ is the county code."
+Iceland,IS,TIN,P,Kennitala,^\d{6}-\d{4}$,"The format is 'DDMMYY-XXXX', where DDMMYY is the birthdate and XXXX is a sequence number."
+Iceland,IS,TIN,B,Kennitala,^\d{6}-\d{4}$,"The format for businesses is the same as for individuals, consisting of 'DDMMYY-XXXX', where DDMMYY is the establishment date and XXXX is a sequence number."
+India,IN,TIN,P,Permanent Account Number (PAN),^[A-Z]{5}\d{4}[A-Z]{1}$,"The format is 'AAAAADDDDA', where A is a letter and D is a digit."
+India,IN,TIN,B,Permanent Account Number (PAN),^[A-Z]{5}\d{4}[A-Z]{1}$,"The format is 'AAAAADDDDA', where A is a letter and D is a digit."
+Ireland,IE,TIN,P,Personal Public Service Number (PPSN),^\d{7}[A-W][A-W]?$,"The format is 'XXXXXXXL' or 'XXXXXXXLL', where XXXXXXX is a 7-digit number and L (or LL) are one or two check letters."
+Ireland,IE,TIN,B,Tax Reference Number,^\d{7}[A-W][A-W]?$,"The format is similar to the PPSN for individuals. It consists of 'XXXXXXXL' or 'XXXXXXXLL', where XXXXXXX is a 7-digit number and L (or LL) are one or two check letters."
+Israel,IL,TIN,P,Mispar Zehut (Identity Number),^\d{9}$,The format consists of 9 digits.
+Israel,IL,TIN,B,Mispar Osek (Business Number),^\d{9}$,The format consists of 9 digits.
+Italy,IT,TIN,P,Codice Fiscale,^[A-Z]{6}\d{2}[A-Z]\d{2}[A-Z]\d{3}[A-Z]$,"The format is 'LLLLLLDDLMDDLYYX', where L is a letter, D is a digit, M is a month letter, and Y is a year digit."
+Italy,IT,TIN,B,Partita IVA,^\d{11}$,The format consists of 11 digits.
+Japan,JP,TIN,P,My Number (Individual Number),^\d{3}-\d{4}-\d{4}$,"The format is 'XXX-YYYY-ZZZZ', where X, Y, and Z are digits."
+Japan,JP,TIN,B,Corporate Number,^\d{13}$,The format consists of 13 digits.
+South Korea,KR,TIN,P,Resident Registration Number,^\d{6}-\d{7}$,"The format is 'YYMMDD-SSSSSSS', where YYMMDD is the birthdate and SSSSSSS is a sequence number."
+South Korea,KR,TIN,B,Business Registration Number,^\d{3}-\d{2}-\d{5}$,"The format is 'XXX-YY-ZZZZZ', where X, Y, and Z are digits."
+Latvia,LV,TIN,P,Personas kods,^\d{6}-\d{5}$,"The format is 'DDMMYY-ZZZZZ', where DDMMYY is the birthdate and ZZZZZ is a sequence number."
+Latvia,LV,TIN,B,Reģistrācijas numurs,^\d{11}$,The format consists of 11 digits.
+Lithuania,LT,TIN,P,Asmens kodas,^\d{11}$,The format consists of 11 digits.
+Lithuania,LT,TIN,B,Įmonės kodas,^\d{9}$,The format consists of 9 digits.
+Luxembourg,LU,TIN,P,Numéro d'identification,^\d{13}$,The format consists of 13 digits.
+Luxembourg,LU,TIN,B,Numéro d'identification,^\d{8}$,The format consists of 8 digits.
+Mexico,MX,TIN,P,Registro Federal de Contribuyentes (RFC),^[A-Z]{4}\d{6}[A-Z0-9]{3}$,"The format is 'LLLLDDDDDDXXX', where L is a letter, D is a digit, and X can be a letter or digit."
+Mexico,MX,TIN,B,Registro Federal de Contribuyentes (RFC),^[A-Z]{3}\d{6}[A-Z0-9]{3}$,"The format is 'LLLDDDDDDXXX', where L is a letter, D is a digit, and X can be a letter or digit."
+Netherlands,NL,TIN,P,Burgerservicenummer (BSN),^\d{9}$,The format consists of 9 digits.
+Netherlands,NL,TIN,B,RSIN,^\d{9}$,The format consists of 9 digits.
+New Zealand,NZ,TIN,P,IRD Number,"^\d{8,9}$",The format consists of 8 or 9 digits.
+New Zealand,NZ,TIN,B,IRD Number,"^\d{8,9}$","The format for businesses is the same as for individuals, consisting of 8 or 9 digits."
+Norway,NO,TIN,P,Fødselsnummer,^\d{11}$,The format consists of 11 digits.
+Norway,NO,TIN,B,Organisasjonsnummer,^\d{9}$,The format consists of 9 digits.
+Poland,PL,TIN,P,Numer identyfikacji podatkowej (NIP),^\d{10}$,The format consists of 10 digits.
+Poland,PL,TIN,B,Numer identyfikacji podatkowej (NIP),^\d{10}$,The format consists of 10 digits.
+Portugal,PT,TIN,P,Número de identificação fiscal (NIF),^\d{9}$,The format consists of 9 digits.
+Portugal,PT,TIN,B,Número de identificação fiscal (NIF),^\d{9}$,The format consists of 9 digits.
+Slovakia,SK,TIN,P,Rodné číslo,"^\d{6}/\d{3,4}$","The format is 'DDMMYY/ZZZ' or 'DDMMYY/ZZZZ', where DDMMYY is the birthdate and ZZZ(Z) is a sequence number."
+Slovakia,SK,TIN,B,Identifikačné číslo (IČO),^\d{8}$,The format consists of 8 digits.
+Slovenia,SI,TIN,P,Davčna številka,^\d{8}$,The format consists of 8 digits.
+Slovenia,SI,TIN,B,Davčna številka,^\d{8}$,The format consists of 8 digits.
+Spain,ES,TIN,P,Número de Identificación Fiscal (NIF),^[A-Z0-9]\d{7}[A-Z0-9]$,"The format can be 'XDDDDDDDX', 'DDDDDDDDX', or 'XDDDDDDDD', where X can be a letter or number, and D is a digit."
+Spain,ES,TIN,B,Número de Identificación Fiscal (NIF),^[A-Z]\d{7}[A-Z]$,"The format is 'XDDDDDDDX', where X is a letter and D is a digit."
+Sweden,SE,TIN,P,Personnummer,^\d{6}-\d{4}$,"The format is 'YYMMDD-SSSS', where YYMMDD is the birthdate and SSSS is a sequence number."
+Sweden,SE,TIN,B,Organisationsnummer,^\d{6}-\d{4}$,"The format is 'XXYYZZ-SSSS', where XXYYZZ is an identifier and SSSS is a sequence number."
+Switzerland,CH,TIN,P,Steueridentifikationsnummer,^\d{9}$,The format consists of 9 digits.
+Turkey,TR,TIN,P,Vergi Kimlik Numarası,^\d{10}$,The format consists of 10 digits.
+Turkey,TR,TIN,B,Vergi Kimlik Numarası,^\d{10}$,The format consists of 10 digits.
+United Kingdom,GB,TIN,P,Unique Taxpayer Reference (UTR),^\d{10}$,The format consists of 10 digits.
+United Kingdom,GB,TIN,B,Unique Taxpayer Reference (UTR),^\d{10}$,The format consists of 10 digits.
+United States,US,TIN,P,Social Security Number (SSN),^\d{3}-\d{2}-\d{4}$,"The format is 'XXX-YY-ZZZZ', where X, Y, and Z are digits."
+United States,US,TIN,B,Employer Identification Number (EIN),^\d{2}-\d{7}$,"The format is 'XX-YYYYYYY', where X and Y are digits."
+Albania,AL,TIN,P,Numri i Identifikimit për Personin Fizik (NID),^[JKL]\d{8}[A-Z]$,"Starts with J, K, or L followed by 8 digits and ends with a letter."
+Albania,AL,TIN,B,Numri i Identifikimit për Tatimpaguesin (NID),^[JKL]\d{8}[A-Z]$,"Starts with J, K, or L followed by 8 digits and ends with a letter."
+Andorra,AD,TIN,P,Número d'Identificació Fiscal (NIF),^[A-Z]\d{6}[A-Z]$,"Starts and ends with a letter, with 6 digits in between."
+Andorra,AD,TIN,B,Número d'Identificació Fiscal (NIF),^[A-Z]\d{6}[A-Z]$,"Starts and ends with a letter, with 6 digits in between."
+Argentina,AR,TIN,P,Clave Única de Identificación Tributaria (CUIT),^\d{2}-\d{8}-\d$,"The format is 'XX-YYYYYYYY-Z', where X, Y, and Z are digits."
+Argentina,AR,TIN,B,Clave Única de Identificación Tributaria (CUIT),^\d{2}-\d{8}-\d$,"The format is 'XX-YYYYYYYY-Z', where X, Y, and Z are digits."

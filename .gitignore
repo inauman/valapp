@@ -45,4 +45,4 @@ build/
 # application files
 app/data/forms*
 app/data/scans*
-data/*
+data/irs
